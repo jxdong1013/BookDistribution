@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.UserActivity">
+
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <include android:id="@+id/llUserHeader"
+        layout="@layout/layoutuserheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop" />
+
+    <LinearLayout
+        android:id="@+id/llUserBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnAddUser"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#303538"
+            android:padding="4dp"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:layout_height="wrap_content"
+            android:text="@string/adduser"/>
+
+        <Button
+            android:id="@+id/btnUserBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:textSize="22dp"
+            android:text="@string/back"/>
+    </LinearLayout>
+
+    <com.jxd.bookdistribution.widget.XListView
+        android:id="@+id/lvUser"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/llUserBottonMenu"
+        android:layout_below="@id/llUserHeader"
+        android:cacheColorHint="#00000000" >
+    </com.jxd.bookdistribution.widget.XListView>
+
+</RelativeLayout>

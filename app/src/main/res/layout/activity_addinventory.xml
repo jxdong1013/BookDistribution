@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.AddInventoryActivity">
+
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llinventory1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvInventoryName"
+            android:text="@string/inventoryname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:minWidth="60dp"
+            />
+        <EditText
+            android:id="@+id/etInventoryName"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llinventory2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llinventory1"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvSiteName"
+            android:text="@string/sitename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center"
+            android:minWidth="60dp"
+            />
+        <EditText
+            android:id="@+id/etSiteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:focusableInTouchMode="false"
+            android:drawableRight="@drawable/arrow_right"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnSaveInventory"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:text="@string/back"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

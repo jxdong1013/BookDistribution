@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:orientation="horizontal" >
+    <CheckBox android:id="@+id/liBookSelect"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/liBookName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="ddd"
+        android:textColor="@color/white"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/liAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+	    android:layout_weight="2"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical" />
+
+
+    <TextView
+        android:id="@+id/liPublish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical" />
+
+    <TextView
+        android:id="@+id/liISBN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textColor="@color/white"
+        android:gravity="left|center_vertical" />
+
+</LinearLayout>

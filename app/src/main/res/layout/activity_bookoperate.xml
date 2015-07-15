@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.BookOperateActivity">
+
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTitleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/operatetype"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textSize="18dp"/>
+        <RadioGroup
+            android:id="@+id/rdgType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2">
+        <RadioButton
+            android:id="@+id/rdbBorrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="@string/borrowbook"/>
+        <RadioButton
+            android:id="@+id/rdbReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="@string/returnbook"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/llTitleHeader">
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/operatesite"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/etSiteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:drawableRight="@drawable/arrow_right"/>
+    </LinearLayout>
+
+    <include android:id="@+id/llBookHeader"
+        layout="@layout/layoutbookheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llSite" />
+
+    <LinearLayout
+        android:id="@+id/llScan"
+        android:layout_above="@+id/llBookOperateMenu"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            android:text="@string/scan"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue"
+            android:layout_weight="2"
+            android:textSize="14sp"
+            android:text="@string/tipscan"/>
+        <TextView
+            android:id="@+id/tvStatistic"
+            android:layout_width="wrap_content"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:text=""
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:layout_height="wrap_content" />
+     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBookOperateMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:text="@string/back"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvBookList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/llScan"
+        android:layout_below="@id/llBookHeader"
+        android:cacheColorHint="#00000000" >
+    </ListView>
+
+</RelativeLayout>

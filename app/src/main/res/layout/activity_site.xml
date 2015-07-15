@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.SiteActivity">
+
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <include android:id="@+id/llSiteHeader"
+        layout="@layout/layoutsiteheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop" />
+
+    <LinearLayout
+        android:id="@+id/llSiteBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnAddSite"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:text="@string/addSite"></Button>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="22dp"
+            android:padding="4dp"
+        android:text="@string/back"></Button>
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lvsite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llSiteHeader"
+        android:layout_above="@id/llSiteBottonMenu"/>
+
+</RelativeLayout>

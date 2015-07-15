@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.InventoryActivity">
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <include android:id="@+id/llInventHeader"
+        layout="@layout/layoutinventoryheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop" />
+
+    <LinearLayout
+        android:id="@+id/llInventoryBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnAddInventory"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:background="#303538"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        android:layout_height="wrap_content"
+        android:text="@string/addinventory"/>
+    </LinearLayout>
+
+    <ListView
+      android:id="@+id/lvInventory"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+        android:layout_above="@id/llInventoryBottonMenu"
+      android:layout_below="@id/llInventHeader"/>
+
+</RelativeLayout>

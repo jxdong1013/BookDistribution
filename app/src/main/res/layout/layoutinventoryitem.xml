@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jxd.bookdistribution.activity.SiteActivity">
+        <TextView
+            android:id="@+id/tvInventoryName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:padding="4dp"
+            android:text="aaa"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"  />
+
+    <TextView
+        android:id="@+id/tvsitename"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="16dp"
+        android:padding="4dp"
+        android:text="aaa"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"  />
+ </LinearLayout>
+

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jxd.bookdistribution"
+    android:installLocation="internalOnly">
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="20" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:name=".app.BookApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SiteActivity"
+            android:label="@string/title_activity_site" >
+        </activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity
+            android:name=".activity.BookActivity"
+            android:label="@string/title_activity_book" >
+        </activity>
+        <activity
+            android:name=".activity.AddBookActivity"
+            android:label="@string/title_activity_add_book"
+            android:launchMode="singleInstance" >
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+        </activity>
+        <activity
+            android:name=".activity.BookQueryActivity"
+            android:label="@string/title_activity_book_query" >
+        </activity>
+        <activity
+            android:name=".activity.BookResultActivity"
+            android:label="@string/title_activity_book_result" >
+        </activity>
+        <activity
+            android:name=".activity.BookOperateActivity"
+            android:label="@string/title_activity_book_operate_b"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity
+            android:name=".activity.UserActivity"
+            android:label="@string/title_activity_user" >
+        </activity>
+        <activity
+            android:name=".activity.UnusualRegisterActivity"
+            android:label="@string/title_activity_unusual_register" >
+        </activity>
+        <activity
+            android:name=".activity.InventoryActivity"
+            android:label="@string/title_activity_inventory" >
+        </activity>
+        <activity
+            android:name=".activity.ExportActivity"
+            android:label="@string/title_activity_export" >
+        </activity>
+        <activity
+            android:name=".activity.InventoryListActivity"
+            android:label="@string/title_activity_inventory_list"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".activity.FileManagerActivity" >
+        </activity>
+        <activity
+            android:name=".activity.LogActivity"
+            android:label="@string/title_activity_log" >
+        </activity>
+        <activity
+            android:name=".activity.LogListActivity"
+            android:label="@string/title_activity_log_list" >
+        </activity>
+        <activity
+            android:name=".activity.AddInventoryActivity"
+            android:label="@string/title_activity_add_inventory" >
+        </activity>
+
+        <activity
+            android:name=".activity.ImportBookActivity"
+            android:label="@string/title_activity_import_book" >
+        </activity>
+
+        <receiver android:name=".receiver.BootupReceiver"
+            android:exported="false"
+            android:enabled="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

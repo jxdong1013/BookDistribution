@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context="com.jxd.bookdistribution.activity.InventoryListActivity">
+
+    <LinearLayout
+        android:id="@+id/lltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+        <include android:id="@+id/ilActionbar" layout="@layout/layoutactionbar"/>
+    </LinearLayout>
+
+    <include android:id="@+id/llInventListHeader"
+        layout="@layout/layoutinventorylistheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lltop" />
+
+    <TextView
+        android:id="@+id/tvTipInfo"
+        android:text="@string/inventorytip"
+        android:textColor="@color/blue"
+        android:layout_marginLeft="4dp"
+        android:textSize="16sp"
+        android:layout_above="@+id/llInventoryBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/llInventoryBottonMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnscan"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:visibility="gone"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:text="@string/scan"/>
+
+        <Button
+            android:id="@+id/btnfinish"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:layout_height="wrap_content"
+            android:text="@string/finishinventory"/>
+
+        <Button
+            android:id="@+id/btnInventoryBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#303538"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="22dp"
+            android:padding="4dp"
+            android:text="@string/back"/>
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lvlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llInventListHeader"
+        android:layout_above="@id/tvTipInfo"/>
+
+</RelativeLayout>
