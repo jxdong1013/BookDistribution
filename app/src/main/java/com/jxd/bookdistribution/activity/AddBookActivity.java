@@ -290,10 +290,12 @@ public class AddBookActivity extends Activity implements View.OnClickListener{
         boolean isok =Check();
         if( isok==false )return;
         String operateType= "add";
+        String sBarCode="";
         if( mBook ==null) {
             mBook = new Book();
             operateType="add";
         }else {
+            sBarCode = mBook.getBarcode();
             operateType="update";
         }
 
@@ -327,17 +329,37 @@ public class AddBookActivity extends Activity implements View.OnClickListener{
             List<Book> books = new ArrayList<Book>();
             books.add(mBook);
         if( operateType.equals("add")) {
+            String dBarcode = mBook.getBarcode();
+            if( dBarcode.isEmpty()==false ){
+                boolean isExist = util.ExistBookByBarcode(dBarcode);
+                if( isExist){
+                    ToastUtil.Show("标签已经被使用了。");
+                    return;
+                }
+            }
             int result = util.insertBooks(books);
             if (result > 0) {
                 clearText();
                 ToastUtil.Show("添加成功。");
+                this.finish();
             } else {
                 ToastUtil.Show("添加失败。");
             }
         }else{
+            String dBarcode = mBook.getBarcode();
+            if( sBarCode.isEmpty()==false && dBarcode.isEmpty()==false &&
+                    sBarCode.equals(dBarcode) ==false ){
+                boolean isExist = util.ExistBookByBarcode(dBarcode);
+                if( isExist ){
+                    ToastUtil.Show("标签已经被使用了。");
+                    return;
+                }
+            }
+
             long result = util.updateBook(mBook);
             if (result > 0) {
                 ToastUtil.Show("更新成功。");
+                this.finish();
             } else {
                 ToastUtil.Show("更新失败。");
             }

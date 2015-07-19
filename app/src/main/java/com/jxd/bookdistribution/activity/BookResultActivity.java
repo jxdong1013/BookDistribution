@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.jxd.bookdistribution.R;
@@ -22,7 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class BookResultActivity extends Activity {
+public class BookResultActivity extends Activity implements AdapterView.OnItemClickListener{
     TextView tvSummary=null;
     XListView mlv=null;
     BookResultXListViewListener mListener=null;
@@ -69,6 +71,7 @@ public class BookResultActivity extends Activity {
         mBooks = new ArrayList<>();
         mAdapter = new BookAdapter(BookResultActivity.this, mBooks, false);
         mlv.setAdapter(mAdapter);
+        mlv.setOnItemClickListener(this);
 
         AsynLoadBooks();
 
@@ -91,6 +94,18 @@ public class BookResultActivity extends Activity {
         } catch (Exception e) {
             ToastUtil.Show("onload出错了!");
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        if( i < 1 || mBooks ==null || mBooks.size()<1 ) return;
+        Intent intent = new Intent();
+        intent.setClass(BookResultActivity.this,AddBookActivity.class);
+        Book book = mBooks.get(i-1);
+        Bundle bd = new Bundle();
+        bd.putSerializable("book", book);
+        intent.putExtras(bd);
+        BookResultActivity.this.startActivity(intent);
     }
 
     private class BookResultListHandler extends Handler {

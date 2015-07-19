@@ -5,7 +5,7 @@ android {
         jxdsigningconfig {
             keyAlias 'jxd'
             keyPassword 'jinxiangdong'
-            storeFile file('F:/jxd/bookdistribution/src/Signing/keystore')
+            storeFile file('E:/MyJob/Person/Project/BookDistribution/src/Signing/keystore')
             storePassword 'jinxiangdong'
         }
     }

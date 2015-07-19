@@ -131,9 +131,12 @@ public class InventoryListActivity extends Activity implements View.OnClickListe
             if( item.getBarcode().equals( barcode )){
                 item.setSelected(true);
                 mAdapter.notifyDataSetChanged();
-                break;
+                return;
             }
         }
+
+        ToastUtil.Show("没有找到此标签对应的书籍盘点信息。");
+
     }
 
         protected void initNFC(){
